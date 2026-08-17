@@ -202,6 +202,43 @@ The deployed API is publicly accessible at:
 
 https://linkplease-dkqe.onrender.com
 
+## Deployment Screenshots
+
+### Render deployment
+
+The application is deployed on Render and is currently live.
+
+![Render deployment](linkplease\screenshots\Screenshot 2026-08-17 183757.png)
+
+### Worker and API logs
+
+The Render logs confirm that both the background worker and FastAPI server started successfully.
+
+![Worker logs](linkplease\screenshots\Screenshot 2026-08-17 194720.png)
+
+### Health check
+
+The deployed `/health` endpoint confirms that the API is running and connected to PostgreSQL.
+
+![Health check]
+(linkplease\screenshots\Screenshot 2026-08-17 194449.png)
+### Event processing
+
+A production webhook event was successfully processed.
+
+![Event processed](linkplease\screenshots\Screenshot 2026-08-17 194648.png)
+
+### DM delivery
+
+A matching rule resulted in a successful PseudoGram DM delivery.
+
+![Delivery success](screenshots/delivery-success.png)(![Database](<linkplease/screenshots/Screenshot 2026-08-17 194600.png>))
+
+### Tests
+
+The rate limiter test passes successfully.
+
+![Pytest result](linkplease\screenshots\Screenshot 2026-08-17 194523.png)
 The Render service and database were successfully created, and the web
 service is currently live.
 
