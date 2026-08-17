@@ -27,20 +27,12 @@ def verify_signature(
 ) -> bool:
 
     if not signature:
-        print("HMAC DEBUG: signature header missing")
         return False
 
-    print(
-        "HMAC DEBUG: key fingerprint:",
-        hashlib.sha256(
-            settings.pseudogram_api_key.encode()
-        ).hexdigest()[:12],
-    )
+    if not signature.startswith("sha256="):
+        return False
 
-    print(
-        "HMAC DEBUG: body fingerprint:",
-        hashlib.sha256(raw_body).hexdigest()[:12],
-    )
+    received_signature = signature[7:]
 
     expected_signature = hmac.new(
         settings.pseudogram_api_key.encode(),
@@ -48,29 +40,10 @@ def verify_signature(
         hashlib.sha256,
     ).hexdigest()
 
-    received_signature = (
-        signature[7:]
-        if signature.startswith("sha256=")
-        else signature
-    )
-
-    print("HMAC DEBUG: received prefix:", received_signature[:12])
-    print("HMAC DEBUG: expected prefix:", expected_signature[:12])
-    print("HMAC DEBUG: body length:", len(raw_body))
-    print("HMAC DEBUG: match:",
-          hmac.compare_digest(
-              received_signature,
-              expected_signature
-          ))
-
-    if not signature.startswith("sha256="):
-        return False
-
     return hmac.compare_digest(
         received_signature,
         expected_signature,
     )
-
 
 @router.post("/webhook")
 async def receive_webhook(

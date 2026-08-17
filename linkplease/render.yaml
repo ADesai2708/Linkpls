@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: linkplease-api
+    runtime: docker
+    plan: starter
+    healthCheckPath: /health
+
+  - type: worker
+    name: linkplease-worker
+    runtime: docker
+    plan: starter
+    dockerCommand: python worker.py
+
+databases:
+  - name: linkplease-db
+    plan: basic-256mb
