@@ -234,7 +234,7 @@ A production webhook event was successfully processed.
 
 A matching rule resulted in a successful PseudoGram DM delivery.
 
-![Delivery success](screenshots/delivery-success.png)(![Database](<linkplease/screenshots/Screenshot 2026-08-17 194600.png>))
+(![Delivery success](<linkplease/screenshots/delivery-success.png>))(![Database](<linkplease/screenshots/Screenshot 2026-08-17 194600.png>))
 
 ### Tests
 
