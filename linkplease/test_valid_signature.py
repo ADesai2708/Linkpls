@@ -7,18 +7,17 @@ import requests
 from app.database import settings
 
 
-url = "http://127.0.0.1:8000/webhook"
-
+url = "https://linkplease-dkqe.onrender.com/webhook"
 
 payload = {
-    "event_id": "evt_valid_hmac_002",
+    "event_id": "evt_duplicate_production_002",
     "event_type": "comment.created",
-    "sent_at": "2026-08-17T08:40:00Z",
+    "sent_at": "2026-08-17T14:20:00Z",
     "data": {
-        "comment_id": "cmt_valid_hmac_002",
-        "post_id": "post_valid_hmac_002",
-        "text": "PRICE please",
-        "created_at": "2026-08-17T08:39:59Z",
+        "comment_id": "cmt_duplicate_production_002",
+        "post_id": "post_duplicate_production_002",
+        "text": "PRICE please again",
+        "created_at": "2026-08-17T14:19:59Z",
         "from": {
             "user_id": "usr_valid_hmac_002",
             "username": "valid_hmac_user"
