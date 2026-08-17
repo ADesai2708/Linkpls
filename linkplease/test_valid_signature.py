@@ -64,7 +64,7 @@ print("BODY:", raw_body.decode())
 
 response = requests.post(
     url,
-    json=payload,
+    data=raw_body,   # send the exact bytes we signed — NOT json=payload
     headers=headers,
 )
 
